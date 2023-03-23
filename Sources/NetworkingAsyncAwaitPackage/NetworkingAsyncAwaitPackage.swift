@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class NetworkManager: ObservableObject {
+class NetworkingAsyncAwaitPackage: ObservableObject {
 
     private let session = URLSession.shared
     private let encoder = JSONEncoder()
