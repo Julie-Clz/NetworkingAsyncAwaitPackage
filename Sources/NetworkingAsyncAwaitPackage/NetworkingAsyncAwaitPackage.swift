@@ -10,18 +10,18 @@ import SwiftUI
 
 public final class NetworkManager: ObservableObject {
 
-    private let session = URLSession.shared
-    private let encoder = JSONEncoder()
-    private let decoder = JSONDecoder()
+   public let session = URLSession.shared
+    public let encoder = JSONEncoder()
+    public let decoder = JSONDecoder()
     
-    enum Method: String {
+    public enum Method: String {
        case GET = "GET"
        case POST = "POST"
        case PUT = "PUT"
        case DELETE = "DELETE"
     }
     
-    func getData<D: Decodable>(from endpoint: String) async throws -> D {
+    public func getData<D: Decodable>(from endpoint: String) async throws -> D {
         guard let url = URL(string: endpoint)
         else {
             throw NetworkServiceError.invalidURL
@@ -39,7 +39,7 @@ public final class NetworkManager: ObservableObject {
         return try decoder.decode(D.self, from: data)
     }
     
-    func postData<D: Codable>(from endpoint: String, content: [String: String]) async throws -> D {
+    public func postData<D: Codable>(from endpoint: String, content: [String: String]) async throws -> D {
         guard let url = URL(string: endpoint)
         else {
             throw NetworkServiceError.invalidURL

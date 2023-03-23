@@ -13,7 +13,7 @@ public enum NetworkServiceError: Error {
 //    case genericError(String)
     case invalidResponseCode(Int)
     
-    var errorMessageString: String {
+    public var errorMessageString: String {
         switch self {
         case .invalidURL:
             return "Invalid URL encountered. Can't proceed with the request"
