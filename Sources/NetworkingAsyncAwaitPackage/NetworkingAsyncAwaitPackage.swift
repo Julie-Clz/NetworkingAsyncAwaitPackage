@@ -10,9 +10,11 @@ import SwiftUI
 
 public final class NetworkingAsyncAwaitPackage {
 
-   public let session = URLSession.shared
+    public let session = URLSession.shared
     public let encoder = JSONEncoder()
     public let decoder = JSONDecoder()
+    
+    public init() {}
     
     public enum Method: String {
        case GET = "GET"
